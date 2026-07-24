@@ -2471,5 +2471,28 @@ footer{ background:var(--charcoal); color:rgba(251,249,243,.7); }
   setTimeout(forceExit, 11000);
 })();
 </script>
+
+<!-- JML preview cross-nav -->
+<style id="jmlx-style">
+  #jmlXNav{ position:fixed; right:18px; bottom:18px; z-index:2147483000;
+    display:flex; gap:8px; font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  #jmlXNav a{ display:inline-flex; align-items:center; gap:7px; text-decoration:none;
+    font-size:13.5px; font-weight:600; letter-spacing:.01em; padding:10px 15px; border-radius:999px;
+    box-shadow:0 8px 24px rgba(30,0,60,.20); transition:transform .18s ease, box-shadow .18s ease, background .2s ease; }
+  #jmlXNav a:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(76,0,153,.30); }
+  #jmlXNav .jx-home{ background:#fff; color:#3B0764; border:1.5px solid rgba(76,0,153,.20); }
+  #jmlXNav .jx-home:hover{ border-color:rgba(76,0,153,.45); }
+  #jmlXNav .jx-alt{ background:#4c0099; color:#fff; border:1.5px solid #4c0099; }
+  #jmlXNav .jx-alt:hover{ background:#3a0077; }
+  #jmlXNav svg{ width:15px; height:15px; }
+  @media (max-width:520px){ #jmlXNav a{ font-size:12.5px; padding:9px 13px; } }
+  @media print{ #jmlXNav{ display:none; } }
+</style>
+<div id="jmlXNav" role="navigation" aria-label="Preview navigation">
+  <a class="jx-home" href="index.html" title="Back to home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#4c0099" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+  <a class="jx-alt" href="report.html" title="Switch view">SEO Report
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+</div>
 </body>
 </html>
