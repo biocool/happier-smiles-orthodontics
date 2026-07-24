@@ -606,6 +606,17 @@
       setTimeout(function(){ try{ pw.focus(); }catch(e){} }, 500);
     };
 
+    /* Robustness watchdog: if the animated hand-off never reveals the gate
+       (e.g. GSAP frame loop throttled in a backgrounded tab), force it via
+       plain DOM after 12s — independent of any animation frames. */
+    setTimeout(function(){
+      if (!hub.classList.contains('show')){
+        var pl = document.getElementById('preloader');
+        if (pl) pl.style.display = 'none';
+        window.__showGate();
+      }
+    }, 12000);
+
     async function sha256hex(s){
       if (window.crypto && crypto.subtle){
         var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
